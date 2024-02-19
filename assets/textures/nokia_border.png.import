@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyckboetf4tsm"
-path="res://.godot/imported/nokia-background.png-02638de1eaf294912521b7d8a25f2da8.ctex"
+uid="uid://ve3rs5p2o1xv"
+path="res://.godot/imported/nokia_border.png-ff742b6ba0416eb7f036ec2e102116ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/splash-screen/nokia-background.png"
-dest_files=["res://.godot/imported/nokia-background.png-02638de1eaf294912521b7d8a25f2da8.ctex"]
+source_file="res://assets/textures/nokia_border.png"
+dest_files=["res://.godot/imported/nokia_border.png-ff742b6ba0416eb7f036ec2e102116ae.ctex"]
 
 [params]
 

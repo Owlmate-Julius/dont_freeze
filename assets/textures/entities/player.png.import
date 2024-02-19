@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn7s2ix0gi4h"
-path="res://.godot/imported/nokia-splash-screen.png-1c3b9cabe62b13c9b518120181151f74.ctex"
+uid="uid://cncf3mdmml7yh"
+path="res://.godot/imported/player.png-7d1205bc35d075dd6fee4a00e8eb6df5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/splash-screen/nokia-splash-screen.png"
-dest_files=["res://.godot/imported/nokia-splash-screen.png-1c3b9cabe62b13c9b518120181151f74.ctex"]
+source_file="res://assets/textures/entities/player.png"
+dest_files=["res://.godot/imported/player.png-7d1205bc35d075dd6fee4a00e8eb6df5.ctex"]
 
 [params]
 

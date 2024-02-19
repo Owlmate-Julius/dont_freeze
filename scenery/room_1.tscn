@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://75odvnq8ispv"]
+
+[ext_resource type="Texture2D" uid="uid://ve3rs5p2o1xv" path="res://assets/textures/nokia_border.png" id="1_or6cm"]
+[ext_resource type="Texture2D" uid="uid://cehe5a7wsuyln" path="res://assets/textures/room1.png" id="2_ok2u8"]
+
+[node name="Room1" type="Node2D"]
+
+[node name="NokiaBorder" type="Sprite2D" parent="."]
+position = Vector2(42, 24)
+texture = ExtResource("1_or6cm")
+
+[node name="Room1" type="Sprite2D" parent="."]
+position = Vector2(42, 24)
+texture = ExtResource("2_ok2u8")

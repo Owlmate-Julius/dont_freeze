@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c718uuulroqd2"
-path="res://.godot/imported/nokia-right-hand.png-0c2838d8eae4df5c2f8c59cbdeb5cac8.ctex"
+uid="uid://c28age8cc6amh"
+path="res://.godot/imported/nokia-logo.png-c0fa35aa3bf15c08c7a77a364d55759f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/splash-screen/nokia-right-hand.png"
-dest_files=["res://.godot/imported/nokia-right-hand.png-0c2838d8eae4df5c2f8c59cbdeb5cac8.ctex"]
+source_file="res://assets/textures/splash-screen/nokia-logo.png"
+dest_files=["res://.godot/imported/nokia-logo.png-c0fa35aa3bf15c08c7a77a364d55759f.ctex"]
 
 [params]
 
