@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cejfohbjo25y3"]
+
+[ext_resource type="Script" path="res://ui/fuel_item_container.gd" id="1_f7kfp"]
+[ext_resource type="LabelSettings" uid="uid://bs3fs0lv8hje7" path="res://ui/small_pixels.tres" id="1_g71py"]
+
+[node name="FuelItemContainer" type="HBoxContainer"]
+theme_override_constants/separation = 0
+script = ExtResource("1_f7kfp")
+
+[node name="ItemNameLabel" type="Label" parent="."]
+layout_mode = 2
+text = "???"
+label_settings = ExtResource("1_g71py")
+
+[node name="AmoutLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "00"
+label_settings = ExtResource("1_g71py")
+horizontal_alignment = 2

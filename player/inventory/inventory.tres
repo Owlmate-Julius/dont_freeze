@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=5 format=3 uid="uid://bthvieng21ee7"]
+
+[ext_resource type="Resource" uid="uid://bfijv3dumbp73" path="res://items/wood.tres" id="1_hyjbd"]
+[ext_resource type="Script" path="res://player/inventory/player_inventory.gd" id="1_wbxo5"]
+[ext_resource type="Resource" uid="uid://bf3fwwkcay2oc" path="res://items/cooper_axe.tres" id="2_61nfw"]
+[ext_resource type="Resource" uid="uid://dogiscete0it1" path="res://items/coal.tres" id="3_eo7s6"]
+
+[resource]
+script = ExtResource("1_wbxo5")
+items = Array[Resource("res://items/item.gd")]([ExtResource("3_eo7s6"), ExtResource("1_hyjbd"), ExtResource("2_61nfw")])

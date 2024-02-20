@@ -1,7 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://75odvnq8ispv"]
+[gd_scene load_steps=13 format=3 uid="uid://75odvnq8ispv"]
 
 [ext_resource type="Texture2D" uid="uid://ve3rs5p2o1xv" path="res://assets/textures/nokia_border.png" id="1_or6cm"]
-[ext_resource type="Texture2D" uid="uid://cehe5a7wsuyln" path="res://assets/textures/room1.png" id="2_ok2u8"]
+[ext_resource type="Texture2D" uid="uid://cehe5a7wsuyln" path="res://assets/textures/rooms/room1.png" id="2_biwk8"]
+[ext_resource type="PackedScene" uid="uid://dmm5qbegrqxaq" path="res://player/player.tscn" id="3_5d71h"]
+[ext_resource type="Texture2D" uid="uid://cthnrov0rt8yq" path="res://assets/textures/objects/bed.png" id="4_ebqmr"]
+[ext_resource type="PackedScene" uid="uid://dlems3ajfe83d" path="res://components/interaction_component.tscn" id="5_uh876"]
+[ext_resource type="PackedScene" uid="uid://ddmorr1x6v7ni" path="res://ui/furnace_panel.tscn" id="6_scwhv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7da3"]
+size = Vector2(85, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4l13t"]
+size = Vector2(8, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwvn4"]
+atlas = ExtResource("4_ebqmr")
+region = Rect2(0, 0, 17, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2lhl"]
+atlas = ExtResource("4_ebqmr")
+region = Rect2(17, 0, 17, 19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvtw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwvn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2lhl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io2kr"]
+size = Vector2(17, 19)
 
 [node name="Room1" type="Node2D"]
 
@@ -11,4 +46,45 @@ texture = ExtResource("1_or6cm")
 
 [node name="Room1" type="Sprite2D" parent="."]
 position = Vector2(42, 24)
-texture = ExtResource("2_ok2u8")
+texture = ExtResource("2_biwk8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(41, 58)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, -12)
+shape = SubResource("RectangleShape2D_b7da3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-32, -34)
+shape = SubResource("RectangleShape2D_4l13t")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(40, -34)
+shape = SubResource("RectangleShape2D_4l13t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(67, 34)
+sprite_frames = SubResource("SpriteFrames_dvtw6")
+autoplay = "default"
+frame_progress = 0.420552
+
+[node name="Player" parent="." instance=ExtResource("3_5d71h")]
+position = Vector2(24, 43)
+
+[node name="FurnaceTrigger" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("5_uh876")]
+position = Vector2(45, 32)
+action_key_name = "interact"
+target_node = NodePath("../CanvasLayer/FurnacePanel")
+target_function_name = "open_panel"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FurnaceTrigger"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_io2kr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FurnacePanel" parent="CanvasLayer" instance=ExtResource("6_scwhv")]
+visible = false

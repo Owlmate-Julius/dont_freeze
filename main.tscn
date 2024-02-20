@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://pstqes7jcym2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_nrtmp"]
-[ext_resource type="PackedScene" uid="uid://75odvnq8ispv" path="res://scenery/room_1.tscn" id="2_cg1s5"]
+[ext_resource type="PackedScene" uid="uid://cqsok3tyjfigq" path="res://scenery/world.tscn" id="2_b0jtl"]
 [ext_resource type="Shader" path="res://shaders/nokia-3310.gdshader" id="3_dhqyx"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l502v"]
@@ -28,7 +28,7 @@ transparent_bg = true
 snap_2d_vertices_to_pixel = true
 size = Vector2i(84, 48)
 
-[node name="Room1" parent="Screen" instance=ExtResource("2_cg1s5")]
+[node name="World" parent="Screen" instance=ExtResource("2_b0jtl")]
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 unique_name_in_owner = true

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bf3fwwkcay2oc"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_2lqnu"]
+
+[resource]
+script = ExtResource("1_2lqnu")
+name = "cooper_axe"
+type = 2
+amount = 1
+can_chop = true
+chop_strength = 1.0
+strength = 3.0
+deffence = 0.0
+luck = 0.0
+food_fill = 0.0
+fuel_fill = 0.0

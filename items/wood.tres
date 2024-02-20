@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bfijv3dumbp73"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_bwcqe"]
+
+[resource]
+script = ExtResource("1_bwcqe")
+name = "Wood"
+type = 0
+amount = 5
+can_chop = false
+chop_strength = 0.0
+strength = 0.0
+deffence = 0.0
+luck = 0.0
+food_fill = 0.0
+fuel_fill = 2.0
