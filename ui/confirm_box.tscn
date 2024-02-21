@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm7ciara58hri"]
+
+[ext_resource type="Texture2D" uid="uid://ve3rs5p2o1xv" path="res://assets/textures/nokia_border.png" id="1_ctit0"]
+[ext_resource type="Script" path="res://ui/confirm_box.gd" id="1_gs47q"]
+[ext_resource type="Texture2D" uid="uid://8yixab7vqap2" path="res://assets/textures/ui/ninepatch_confirmbox.png" id="2_15y3w"]
+
+[node name="ConfirmBox" type="Control"]
+process_mode = 4
+layout_mode = 3
+anchors_preset = 0
+offset_right = 84.0
+offset_bottom = 48.0
+script = ExtResource("1_gs47q")
+
+[node name="NokiaBorder" type="Sprite2D" parent="."]
+position = Vector2(42, 24)
+texture = ExtResource("1_ctit0")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -20.0
+offset_right = 29.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/Control"]
+layout_mode = 2
+texture = ExtResource("2_15y3w")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Control"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
+
+[node name="TextLabel" type="Label" parent="CenterContainer/Control/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Confirm ?"
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/Control/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Control/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="YesLabel" type="Label" parent="CenterContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "YES"
+horizontal_alignment = 1
+
+[node name="ConfirmYesBorder" type="NinePatchRect" parent="CenterContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/YesLabel"]
+unique_name_in_owner = true
+show_behind_parent = true
+custom_minimum_size = Vector2(25, 15)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_15y3w")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="NoLabel" type="Label" parent="CenterContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "NO"
+horizontal_alignment = 1
+
+[node name="ConfirmNoBorder" type="NinePatchRect" parent="CenterContainer/Control/VBoxContainer/MarginContainer2/HBoxContainer/NoLabel"]
+unique_name_in_owner = true
+visible = false
+show_behind_parent = true
+custom_minimum_size = Vector2(21, 15)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_15y3w")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3

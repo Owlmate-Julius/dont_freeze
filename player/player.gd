@@ -16,11 +16,8 @@ var current_state = States.IDLE
 
 
 func _ready():
-	GlobalEvents.ui_panel_opened.connect(func(): process_mode = PROCESS_MODE_DISABLED)
-	GlobalEvents.ui_panel_closed.connect(x)
-
-func x():
-	process_mode = Node.PROCESS_MODE_INHERIT
+	GlobalEvents.ui_panel_opened.connect(func(): set_physics_process(false))
+	GlobalEvents.ui_panel_closed.connect(func(): set_physics_process(true))
 
 func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")

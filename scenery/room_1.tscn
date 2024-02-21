@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://75odvnq8ispv"]
+[gd_scene load_steps=15 format=3 uid="uid://75odvnq8ispv"]
 
 [ext_resource type="Texture2D" uid="uid://ve3rs5p2o1xv" path="res://assets/textures/nokia_border.png" id="1_or6cm"]
 [ext_resource type="Texture2D" uid="uid://cehe5a7wsuyln" path="res://assets/textures/rooms/room1.png" id="2_biwk8"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cthnrov0rt8yq" path="res://assets/textures/objects/bed.png" id="4_ebqmr"]
 [ext_resource type="PackedScene" uid="uid://dlems3ajfe83d" path="res://components/interaction_component.tscn" id="5_uh876"]
 [ext_resource type="PackedScene" uid="uid://ddmorr1x6v7ni" path="res://ui/furnace_panel.tscn" id="6_scwhv"]
+[ext_resource type="PackedScene" uid="uid://bm7ciara58hri" path="res://ui/confirm_box.tscn" id="7_ue1xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7da3"]
 size = Vector2(85, 6)
@@ -36,9 +37,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_io2kr"]
-size = Vector2(17, 19)
+size = Vector2(14, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oy2u"]
+size = Vector2(13, 10)
 
 [node name="Room1" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FurnacePanel" parent="CanvasLayer" instance=ExtResource("6_scwhv")]
+visible = false
+
+[node name="ConfirmBox" parent="CanvasLayer" instance=ExtResource("7_ue1xa")]
+visible = false
 
 [node name="NokiaBorder" type="Sprite2D" parent="."]
 position = Vector2(42, 24)
@@ -74,17 +86,23 @@ frame_progress = 0.420552
 position = Vector2(24, 43)
 
 [node name="FurnaceTrigger" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("5_uh876")]
-position = Vector2(45, 32)
+position = Vector2(44, 32)
 action_key_name = "interact"
 target_node = NodePath("../CanvasLayer/FurnacePanel")
 target_function_name = "open_panel"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FurnaceTrigger"]
-position = Vector2(0.5, 1.5)
+position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_io2kr")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="InteractionComponent" parent="." node_paths=PackedStringArray("target_node") instance=ExtResource("5_uh876")]
+position = Vector2(70, 33)
+action_key_name = "interact"
+target_node = NodePath("../CanvasLayer/ConfirmBox")
+target_function_name = "display"
+metadata/_edit_group_ = true
 
-[node name="FurnacePanel" parent="CanvasLayer" instance=ExtResource("6_scwhv")]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponent"]
+position = Vector2(-1.5, 5)
+shape = SubResource("RectangleShape2D_6oy2u")
