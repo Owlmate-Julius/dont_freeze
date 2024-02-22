@@ -1,10 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://dmm5qbegrqxaq"]
+[gd_scene load_steps=30 format=3 uid="uid://dmm5qbegrqxaq"]
 
 [ext_resource type="Texture2D" uid="uid://cncf3mdmml7yh" path="res://assets/textures/entities/player.png" id="1_c5x71"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_da7p1"]
+[ext_resource type="Resource" uid="uid://baxt7qjl7ta6" path="res://player/player_stats.tres" id="2_ehmnt"]
+[ext_resource type="PackedScene" path="res://components/hitbox_component.tscn" id="2_yqdl7"]
+[ext_resource type="Resource" uid="uid://bthvieng21ee7" path="res://player/inventory/inventory.tres" id="3_53o33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xpo0"]
 size = Vector2(8, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig1gx"]
+size = Vector2(8, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0r0n6"]
 atlas = ExtResource("1_c5x71")
@@ -199,16 +205,27 @@ animations = [{
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_da7p1")
+player_stats = ExtResource("2_ehmnt")
+inventory = ExtResource("3_53o33")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -5)
 shape = SubResource("RectangleShape2D_3xpo0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -7)
+[node name="PlayerFacingSide" type="Node2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="HitboxComponent" parent="PlayerFacingSide" instance=ExtResource("2_yqdl7")]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerFacingSide/HitboxComponent"]
+position = Vector2(5, -1)
+shape = SubResource("RectangleShape2D_ig1gx")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerFacingSide"]
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_4doha")
 animation = &"axe"
 autoplay = "axe"
 flip_h = true
-
-[node name="PlayerFacingSide" type="Node2D" parent="."]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://twq4agaittfc"]
+
+[ext_resource type="Texture2D" uid="uid://jnfl5kdc3tt8" path="res://assets/textures/objects/tree.png" id="1_2e7go"]
+[ext_resource type="Script" path="res://objects/tree.gd" id="2_3deic"]
+[ext_resource type="PackedScene" path="res://components/hurtbox_component.tscn" id="2_t3gi6"]
+[ext_resource type="Script" path="res://components/stats_component.gd" id="4_elftc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jdpl"]
+size = Vector2(6, 27)
+
+[node name="Tree" type="Sprite2D"]
+position = Vector2(0, -17)
+texture = ExtResource("1_2e7go")
+hframes = 3
+script = ExtResource("2_3deic")
+
+[node name="HurtboxComponent" parent="." instance=ExtResource("2_t3gi6")]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+visible = false
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_0jdpl")
+
+[node name="StatsComponent" type="Node" parent="." node_paths=PackedStringArray("hurtbox")]
+script = ExtResource("4_elftc")
+hurtbox = NodePath("../HurtboxComponent")

@@ -1,25 +1,59 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqsok3tyjfigq"]
+[gd_scene load_steps=11 format=3 uid="uid://cqsok3tyjfigq"]
 
 [ext_resource type="PackedScene" uid="uid://75odvnq8ispv" path="res://scenery/room_1.tscn" id="1_6gv5c"]
 [ext_resource type="Script" path="res://scenery/GameStatsManager.gd" id="1_gevv0"]
 [ext_resource type="Resource" uid="uid://bxkndef43rsdo" path="res://global/game_stats.tres" id="2_iwe3x"]
 [ext_resource type="Texture2D" uid="uid://ve3rs5p2o1xv" path="res://assets/textures/nokia_border.png" id="4_5awbq"]
 [ext_resource type="Texture2D" uid="uid://dkuwo5dybxdg1" path="res://assets/textures/tileset/tileset.png" id="5_4nyc3"]
+[ext_resource type="PackedScene" uid="uid://dmm5qbegrqxaq" path="res://player/player.tscn" id="6_wldhf"]
+[ext_resource type="PackedScene" uid="uid://twq4agaittfc" path="res://objects/tree.tscn" id="7_ea60d"]
+[ext_resource type="Texture2D" uid="uid://d1n3ckxw7q23f" path="res://assets/textures/objects/house.png" id="8_wlm8s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyt48"]
 texture = ExtResource("5_4nyc3")
 0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.875, 8, -7, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_tp3lm"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cyt48")
 
 [node name="World" type="Node2D"]
@@ -28,14 +62,33 @@ sources/0 = SubResource("TileSetAtlasSource_cyt48")
 script = ExtResource("1_gevv0")
 game_stats = ExtResource("2_iwe3x")
 
-[node name="Room1" parent="." instance=ExtResource("1_6gv5c")]
-position = Vector2(0, -73)
-
 [node name="NokiaBorder" type="Sprite2D" parent="."]
 position = Vector2(42, 24)
 texture = ExtResource("4_5awbq")
+
+[node name="Room1" parent="." instance=ExtResource("1_6gv5c")]
+position = Vector2(0, -73)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tp3lm")
 format = 2
 layer_0/tile_data = PackedInt32Array(196604, 0, 2, 196605, 65536, 2, 196606, 131072, 2, 196607, 196608, 2, 131072, 262144, 2, 131073, 0, 2, 131074, 65536, 2, 131075, 131072, 2, 131076, 196608, 2, 131077, 262144, 2, 131078, 0, 2, 131079, 65536, 2, 131080, 131072, 2, 131081, 196608, 2, 131082, 262144, 2, 196600, 65536, 2, 196601, 131072, 2, 196602, 196608, 2, 196603, 262144, 2, 196595, 65536, 2, 196596, 131072, 2, 196597, 196608, 2, 196598, 262144, 2, 196599, 0, 2, 131083, 0, 2, 131084, 65536, 2, 131085, 131072, 2, 131086, 196608, 2, 131087, 262144, 2, 131088, 0, 2, 131089, 65536, 2, 131090, 131072, 2, 131091, 196608, 2, 131092, 262144, 2, 196594, 0, 2)
+
+[node name="Camera2D" type="Camera2D" parent="TileMap"]
+position = Vector2(42, 24)
+
+[node name="Player" parent="." instance=ExtResource("6_wldhf")]
+position = Vector2(13, 31)
+
+[node name="Trees" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Tree" parent="Trees" instance=ExtResource("7_ea60d")]
+position = Vector2(75, 16)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="House" type="Sprite2D" parent="Objects"]
+z_index = -1
+position = Vector2(44, 13)
+texture = ExtResource("8_wlm8s")

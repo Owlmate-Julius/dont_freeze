@@ -7,6 +7,6 @@ script = ExtResource("1_3x27h")
 health = 10.0
 hunger = 0.0
 chop_strength = 0.0
-strength = 0.0
+strength = 2.0
 deffence = 0.0
 luck = 0.0

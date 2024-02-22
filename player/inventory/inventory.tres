@@ -8,3 +8,4 @@
 [resource]
 script = ExtResource("1_wbxo5")
 items = Array[Resource("res://items/item.gd")]([ExtResource("3_eo7s6"), ExtResource("1_hyjbd"), ExtResource("2_61nfw")])
+equipped_weapon = ExtResource("2_61nfw")

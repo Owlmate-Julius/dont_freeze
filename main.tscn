@@ -10,9 +10,9 @@ viewport_path = NodePath("Screen")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_udw2h"]
 resource_local_to_scene = true
 shader = ExtResource("3_dhqyx")
-shader_parameter/door_effect = 0.0601
-shader_parameter/door_intensity = 1.8001
-shader_parameter/grain_amount = 0.07
+shader_parameter/door_effect = 0.0001
+shader_parameter/door_intensity = 2.0
+shader_parameter/grain_amount = 0.0
 shader_parameter/shadow_offset = Vector2(0.2, 0.2)
 shader_parameter/shadow_intensity = 0.2
 shader_parameter/screen = SubResource("ViewportTexture_l502v")
