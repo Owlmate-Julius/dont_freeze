@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://twq4agaittfc"]
+[gd_scene load_steps=11 format=3 uid="uid://twq4agaittfc"]
 
 [ext_resource type="Texture2D" uid="uid://jnfl5kdc3tt8" path="res://assets/textures/objects/tree.png" id="1_2e7go"]
 [ext_resource type="Script" path="res://objects/tree.gd" id="2_3deic"]
 [ext_resource type="PackedScene" path="res://components/hurtbox_component.tscn" id="2_t3gi6"]
 [ext_resource type="Script" path="res://components/stats_component.gd" id="4_elftc"]
+[ext_resource type="PackedScene" uid="uid://1c11pswq2ttr" path="res://components/drop_component.tscn" id="5_5wyde"]
+[ext_resource type="Resource" uid="uid://bthvieng21ee7" path="res://player/inventory/inventory.tres" id="6_r88de"]
+[ext_resource type="Resource" uid="uid://bfijv3dumbp73" path="res://items/wood.tres" id="7_1n5qg"]
+[ext_resource type="Script" path="res://items/item_drop_cfg.gd" id="8_3xaak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jdpl"]
 size = Vector2(6, 27)
+
+[sub_resource type="Resource" id="Resource_wdv4d"]
+script = ExtResource("8_3xaak")
+item = ExtResource("7_1n5qg")
+min_amount = 2
+max_amount = 5
 
 [node name="Tree" type="Sprite2D"]
 position = Vector2(0, -17)
@@ -25,3 +35,7 @@ shape = SubResource("RectangleShape2D_0jdpl")
 [node name="StatsComponent" type="Node" parent="." node_paths=PackedStringArray("hurtbox")]
 script = ExtResource("4_elftc")
 hurtbox = NodePath("../HurtboxComponent")
+
+[node name="DropComponent" parent="." instance=ExtResource("5_5wyde")]
+player_inventory = ExtResource("6_r88de")
+items = Array[ExtResource("8_3xaak")]([SubResource("Resource_wdv4d")])

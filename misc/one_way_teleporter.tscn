@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://x7vdbvsdr6p8"]
+
+[ext_resource type="Script" path="res://misc/one_way_teleporter.gd" id="1_way1f"]
+
+[node name="OneWayTeleporter" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_way1f")

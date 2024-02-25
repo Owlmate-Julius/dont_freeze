@@ -7,8 +7,16 @@ signal weapon_equipped
 @export var equipped_armor : Item = null # type ARMOR
 
 
-func add_item(Item):
-	items.append(Item)
+func add_item(_item : Item, amount : int = 1):
+	var idx = items.find(_item)
+	if idx == -1:
+		items.append(_item)
+	else:
+		items[idx].amount += amount
+	#for item in items:
+		#if item.name == _item.name:
+			#item.amount += amount
+			#return
 
 
 func equip_weapon(weapon):

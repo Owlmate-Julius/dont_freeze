@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @onready var stats_component = $StatsComponent
+@onready var drop_component = $DropComponent
 
 
 #enum HurtState {
@@ -26,4 +27,5 @@ func _on_tree_hurt(current_health):
 		frame = 2
 	else:
 		await get_tree().create_timer(0.5).timeout
+		drop_component.drop_items()
 		queue_free()
